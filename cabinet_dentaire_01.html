@@ -1,0 +1,2847 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Dentaire Excellence | Votre Sourire Notre Priorité</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --secondary-color: #16c79a;
+            --accent-color: #ff6b6b;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a2e;
+            --gradient-1: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            --gradient-2: linear-gradient(135deg, #16c79a 0%, #0d9488 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s ease;
+        }
+
+        .header-scrolled {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled .nav-links a {
+            color: var(--dark-color);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--secondary-color);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(22, 199, 154, 0.3);
+        }
+
+        .header-scrolled .nav-links a:hover,
+        .header-scrolled .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .nav-links a {
+                font-size: 1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--gradient-1);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            opacity: 0.1;
+            animation: zoomInOut 20s infinite alternate;
+        }
+
+        @keyframes zoomInOut {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 3rem 4rem 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1 1 0;
+            color: var(--light-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--light-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255,255,255,0.92);
+            max-width: 520px;
+        }
+
+        .hero-image {
+            flex: 1 1 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 320px;
+            max-width: 580px; 
+            height: 480px;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.5s cubic-bezier(.4,2,.3,1);
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0deg) scale(1.04);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--gradient-2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(22, 199, 154, 0.3);
+        }
+
+        /* CTA Button in Hero Section */
+        .hero-content .cta-button {
+            width: 280px;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .hero-content .cta-button {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
+        /* About Section */
+        .about {
+            padding: 10rem 2rem;
+            background: var(--light-color);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2316c79a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--secondary-color);
+            border-radius: 30px;
+            z-index: -1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content {
+            padding: 3rem;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 10rem 2rem;
+            background: var(--gradient-1);
+            color: var(--light-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+        }
+
+        .section-title p {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary-color), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-img {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .service-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .service-card:hover .service-content h3::after {
+            width: 100%;
+        }
+
+        .service-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 10rem 2rem;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 90c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z' fill='%2316c79a' fill-opacity='0.05'/%3E%3C/svg%3E"),
+                          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0c16.6 0 30 13.4 30 30S46.6 60 30 60 0 46.6 0 30 13.4 0 30 0zm0 10c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20z' fill='%2316c79a' fill-opacity='0.05'/%3E%3C/svg%3E");
+            background-position: 0 0, 50px 50px;
+            opacity: 0.5;
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--dark-color);
+        }
+
+        .testimonials .section-title p {
+            color: var(--secondary-color);
+        }
+
+        .testimonials-swiper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(22, 199, 154, 0.1);
+            height: 400px; /* Fixed height for all cards */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            opacity: 0.2;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-color);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-right: 1rem;
+        }
+
+        .testimonial-content::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .testimonial-content::-webkit-scrollbar-track {
+            background: rgba(22, 199, 154, 0.1);
+            border-radius: 2px;
+        }
+
+        .testimonial-content::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: auto;
+        }
+
+        .testimonial-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary-color);
+            padding: 3px;
+            background: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info span {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .testimonials-swiper .swiper-button-next,
+        .testimonials-swiper .swiper-button-prev {
+            color: var(--secondary-color);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonials-swiper .swiper-button-next:after,
+        .testimonials-swiper .swiper-button-prev:after {
+            font-size: 1.2rem;
+        }
+
+        .testimonials-swiper .swiper-button-next:hover,
+        .testimonials-swiper .swiper-button-prev:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .testimonials-swiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: var(--secondary-color);
+            opacity: 0.5;
+        }
+
+        .testimonials-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 6rem 1rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem;
+                margin: 1rem 0.5rem;
+            }
+
+            .testimonial-quote {
+                top: 1.5rem;
+                left: 1.5rem;
+                font-size: 1.5rem;
+            }
+
+            .testimonial-content {
+                font-size: 1rem;
+            }
+
+            .testimonial-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .author-info h4 {
+                font-size: 1.1rem;
+            }
+
+            .testimonials-swiper .swiper-button-next,
+            .testimonials-swiper .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 10rem 2rem;
+            background: var(--light-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2316c79a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+
+        .contact-info-details {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .contact-info-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--light-color);
+        }
+
+        /* Add this new CSS to make the third card span full width */
+        .contact-info-card:nth-child(3) {
+            grid-column: 1 / -1;
+        }
+
+        .contact-info-card i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            background: rgba(22, 199, 154, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info-card-content h3 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info-card-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .contact-map {
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 300px;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-form {
+            padding: 3rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .contact-form h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid rgba(22, 199, 154, 0.2);
+            border-radius: 15px;
+            background: var(--light-color);
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(22, 199, 154, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(26, 26, 46, 0.6);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-form .cta-button {
+            width: 100%;
+            margin-top: 1rem;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-info-details {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact {
+                padding: 6rem 1rem;
+            }
+
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 2rem;
+            }
+
+            .contact-info-card {
+                padding: 1.2rem;
+            }
+
+            .contact-info-card i {
+                font-size: 1.2rem;
+                padding: 0.8rem;
+                min-width: 45px;
+                height: 45px;
+            }
+
+            .contact-info-card-content h3 {
+                font-size: 1rem;
+            }
+
+            .contact-info-card-content p {
+                font-size: 0.9rem;
+            }
+
+            .contact-map {
+                height: 250px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Swiper Styles */
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+        }
+
+        .hero-swiper .swiper-slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-swiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-swiper .swiper-slide-active img {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-swiper .swiper-button-next,
+        .hero-swiper .swiper-button-prev {
+            color: var(--secondary-color);
+            background: rgba(255, 255, 255, 0.95);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .hero-swiper .swiper-button-next {
+            right: 20px;
+        }
+
+        .hero-swiper .swiper-button-prev {
+            left: 20px;
+        }
+
+        .hero-swiper .swiper-button-next:hover,
+        .hero-swiper .swiper-button-prev:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .hero-swiper .swiper-button-next:after,
+        .hero-swiper .swiper-button-prev:after {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero-swiper .swiper-pagination {
+            bottom: 20px !important;
+        }
+
+        .hero-swiper .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .hero-swiper .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: var(--secondary-color);
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 2.5rem;
+                padding: 5rem 2rem 3rem 2rem;
+            }
+            .hero-image {
+                min-width: 220px;
+                max-width: 340px;
+                height: 340px;
+            }
+            .hero-text h1 {
+                font-size: 2.7rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .hero-content {
+                padding: 3.5rem 1rem 2rem 1rem;
+            }
+            .hero-image {
+                min-width: 160px;
+                max-width: 220px;
+                height: 220px;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-text p {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Calendar Styles */
+        .calendar-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .calendar-section .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .calendar-section .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .calendar-section .section-title p {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .calendar-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .weekly-hours {
+            background: var(--gradient-1);
+            border-radius: 15px;
+            padding: 2rem;
+            color: var(--light-color);
+        }
+
+        .weekly-hours h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hours-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .time {
+            font-weight: 500;
+        }
+
+        .calendar-main {
+            background: var(--light-color);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-nav-btn {
+            background: var(--gradient-2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .calendar-nav-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .calendar-grid {
+            margin-bottom: 2rem;
+        }
+
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .calendar-day:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .calendar-day.selected {
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        .calendar-day.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .calendar-day.current-day {
+            background: var(--accent-color);
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar-day.current-day::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: var(--light-color);
+            border-radius: 50%;
+        }
+
+        .time-slots {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .time-slots h4 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+            font-size: 1.4rem;
+        }
+
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .time-slot {
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .time-slot:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(22, 199, 154, 0.2);
+        }
+
+        .time-slot.available {
+            background: var(--gradient-2);
+            color: white;
+        }
+
+        .time-slot.unavailable {
+            background: #f8f9fa;
+            color: #adb5bd;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 992px) {
+            .calendar-container {
+                grid-template-columns: 1fr;
+            }
+
+            .weekly-hours {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .calendar-container {
+                padding: 1rem;
+            }
+
+            .calendar-day {
+                font-size: 0.9rem;
+            }
+
+            .slots-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .hours-list li {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Team Section Styles */
+        .team-section {
+            max-width: 1400px;
+            margin: 6rem auto 0 auto;
+            padding: 0 2rem;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .team-subtitle {
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+
+        .team-social {
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background: rgba(22, 199, 154, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            transition: bottom 0.3s ease;
+        }
+
+        .team-card:hover .team-social {
+            bottom: 0;
+        }
+
+        .team-social a {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .team-social a:hover {
+            transform: translateY(-3px);
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+
+        .team-role {
+            display: block;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .team-info p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .team-section {
+                margin: 4rem auto;
+            }
+
+            .team-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+
+            .team-info {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            position: relative;
+            padding: 8rem 2rem;
+            overflow: hidden;
+            background: var(--gradient-1);
+        }
+
+        .contact-info-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .contact-info-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--light-color);
+        }
+
+        .contact-question {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--light-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-item span {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .contact-cta {
+            position: relative;
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--gradient-2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .contact-cta:hover::before {
+            left: 100%;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(22, 199, 154, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info-section {
+                padding: 6rem 1rem;
+            }
+
+            .contact-question {
+                font-size: 2rem;
+            }
+
+            .contact-details {
+                gap: 1.5rem;
+            }
+
+            .contact-item {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .contact-item span {
+                font-size: 1rem;
+            }
+        }
+
+        /* Update form styles */
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid rgba(22, 199, 154, 0.2);
+            border-radius: 15px;
+            background: var(--light-color);
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2316c79a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2rem;
+            padding-right: 3rem;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(22, 199, 154, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--gradient-1);
+            color: var(--light-color);
+            padding: 5rem 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2316c79a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-info {
+            grid-column: span 1;
+        }
+
+        .footer-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-info p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer ul li a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-contact ul li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-contact ul li i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 1200px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 4rem 1rem 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-info {
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer ul li a {
+                display: inline-block;
+            }
+
+            .footer-contact ul li {
+                justify-content: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-float a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-float a i {
+            font-size: 2rem;
+        }
+
+        .whatsapp-float .whatsapp-text {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            color: #25D366;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(22, 199, 154, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-to-top a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--secondary-color), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(22, 199, 154, 0.4);
+        }
+
+        .scroll-to-top a:hover::before {
+            opacity: 0.2;
+        }
+
+        .scroll-to-top a i {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-3px);
+            }
+            60% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Responsive styles for WhatsApp */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .whatsapp-float a {
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float a i {
+                font-size: 1.7rem;
+            }
+
+            .whatsapp-float .whatsapp-text {
+                display: none;
+            }
+        }
+
+        /* Responsive styles for Scroll to Top */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .scroll-to-top a {
+                width: 45px;
+                height: 45px;
+            }
+
+            .scroll-to-top a i {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Add these styles in the <style> section */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-color);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled .bar {
+            background-color: var(--dark-color);
+        }
+
+        @media (max-width: 768px) {
+            .burger-menu {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--gradient-1);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                color: var(--light-color);
+                font-size: 1.2rem;
+            }
+
+            .burger-menu.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+                background-color: var(--light-color);
+            }
+
+            .burger-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .burger-menu.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+                background-color: var(--light-color);
+            }
+        }
+
+        /* Add overlay for mobile menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            display: none;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cabinet Dentaire</div>
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="nav-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#about">À Propos</a>
+                <a href="#services">Services</a>
+                <a href="#horaires">Horaires</a>
+                <a href="#temoignages">Témoignages</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-right">
+                <h1>Votre Sourire Notre Passion</h1>
+                <p>Découvrez l'excellence en matière de soins dentaires dans un environnement moderne et confortable. Notre équipe de professionnels dévoués s'engage à vous offrir le meilleur service.</p>
+                <a href="#contact" class="cta-button">Prendre Rendez-vous</a>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Cabinet Dentaire">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Notre Cabinet">
+            </div>
+            <div class="about-content glass-card" data-aos="fade-left">
+                <h2>Notre Cabinet</h2>
+                <p>Fondé en 2010, notre cabinet dentaire s'engage à offrir des soins dentaires de la plus haute qualité. Notre équipe de professionnels expérimentés utilise les dernières technologies pour assurer votre confort et votre bien-être.</p>
+                <p>Nous croyons en une approche personnalisée de la santé dentaire, en prenant le temps d'écouter vos besoins et de vous offrir des solutions adaptées.</p>
+            </div>
+        </div>
+
+        <!-- New Team Section -->
+        <div class="team-section" data-aos="fade-up">
+            <h2>Notre Équipe</h2>
+            <p class="team-subtitle">Des professionnels passionnés à votre service</p>
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dr. Sophie Martin">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sophie Martin</h3>
+                        <span class="team-role">Dentiste Principal</span>
+                        <p>Plus de 15 ans d'expérience en dentisterie esthétique et implantologie. Spécialisée dans les sourires parfaits.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dr. Thomas Dubois">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Thomas Dubois</h3>
+                        <span class="team-role">Orthodontiste</span>
+                        <p>Expert en orthodontie invisible et alignement dentaire. Passionné par les nouvelles technologies dentaires.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dr. Marie Laurent">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Marie Laurent</h3>
+                        <span class="team-role">Endodontiste</span>
+                        <p>Spécialiste des soins endodontiques complexes. Reconnue pour son approche douce et précise.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Dr. Claire Moreau">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Claire Moreau</h3>
+                        <span class="team-role">Parodontiste</span>
+                        <p>Experte en santé des gencives et en implantologie. Dévouée à la prévention et au traitement des maladies parodontales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Nos Services</h2>
+            <p>Des soins complets pour toute la famille</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-img">
+                    <img src="images/hollywood-smile.jpg" alt="Sourire Hollywoodien">
+                </div>
+                <div class="service-content">
+                    <h3>Sourire Hollywoodien</h3>
+                    <p>Obtenez un sourire éclatant et parfaitement aligné grâce à nos techniques avancées de dentisterie esthétique.</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-img">
+                    <img src="images/soins-dentaires.jpg" alt="Soins Dentaires">
+                </div>
+                <div class="service-content">
+                    <h3>Soins Dentaires</h3>
+                    <p>Des soins complets pour préserver la santé de vos dents et de vos gencives dans un environnement rassurant.</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-img">
+                    <img src="images/esthetique-dentaire.jpg" alt="Esthétique Dentaire">
+                </div>
+                <div class="service-content">
+                    <h3>Esthétique Dentaire</h3>
+                    <p>Blanchiment, facettes et solutions sur-mesure pour sublimer la beauté naturelle de votre sourire.</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-img">
+                    <img src="images/blanchiment-dentaire.jpg" alt="Blanchiment Dentaire">
+                </div>
+                <div class="service-content">
+                    <h3>Blanchiment Dentaire</h3>
+                    <p>Des résultats visibles dès la première séance pour des dents plus blanches et un sourire éclatant.</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-img">
+                    <img src="images/facettes-dentaire.jpg" alt="Facettes Dentaires">
+                </div>
+                <div class="service-content">
+                    <h3>Facettes Dentaires</h3>
+                    <p>Corrigez les imperfections et transformez votre sourire avec des facettes ultra-fines et naturelles.</p>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-img">
+                    <img src="images/implants-dentaire.jpg" alt="Implants Dentaires">
+                </div>
+                <div class="service-content">
+                    <h3>Implants Dentaires</h3>
+                    <p>Remplacez vos dents manquantes par des implants robustes et esthétiques pour une mastication optimale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="horaires" data-aos="fade-up">
+        <!-- Calendar Section -->
+        <div class="calendar-section" >
+            <div class="section-title">
+                <h2>Disponibilités</h2>
+                <p>Horaires d'ouverture et prise de rendez-vous</p>
+            </div>
+            <div class="calendar-container">
+                <div class="weekly-hours" data-aos="fade-right">
+                    <h3>Horaires d'ouverture</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Lundi</span>
+                            <span class="time">9h00 - 19h00</span>
+                        </li>
+                        <li>
+                            <span class="day">Mardi</span>
+                            <span class="time">9h00 - 19h00</span>
+                        </li>
+                        <li>
+                            <span class="day">Mercredi</span>
+                            <span class="time">9h00 - 19h00</span>
+                        </li>
+                        <li>
+                            <span class="day">Jeudi</span>
+                            <span class="time">9h00 - 19h00</span>
+                        </li>
+                        <li>
+                            <span class="day">Vendredi</span>
+                            <span class="time">9h00 - 19h00</span>
+                        </li>
+                        <li>
+                            <span class="day">Samedi</span>
+                            <span class="time">9h00 - 17h00</span>
+                        </li>
+                        <li>
+                            <span class="day">Dimanche</span>
+                            <span class="time">Fermé</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="calendar-main" data-aos="fade-left">
+                    <div class="calendar-header">
+                        <button id="prevMonth" class="calendar-nav-btn"><i class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonth">Septembre 2024</h3>
+                        <button id="nextMonth" class="calendar-nav-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid">
+                        <div class="calendar-weekdays">
+                            <div>Dim</div>
+                            <div>Lun</div>
+                            <div>Mar</div>
+                            <div>Mer</div>
+                            <div>Jeu</div>
+                            <div>Ven</div>
+                            <div>Sam</div>
+                        </div>
+                        <div id="calendarDays" class="calendar-days"></div>
+                    </div>
+                    <div id="timeSlots" class="time-slots">
+                        <h4>Horaires disponibles pour <span id="selectedDate">--/--/----</span></h4>
+                        <div class="slots-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- new contact info section -->
+    <section class="contact-info-section" data-aos="fade-up">
+        <div class="contact-info-container">
+            <h2 class="contact-question">Vous souhaitez avoir plus de renseignements ?</h2>
+            <div class="contact-details">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-phone"></i>
+                    <span>+33 1 23 45 67 89</span>
+                </div>
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@cabinet-dentaire.fr</span>
+                </div>
+            </div>
+            <a href="#contact" class="contact-cta" data-aos="fade-up" data-aos-delay="300">
+                Contactez-nous
+            </a>
+        </div>
+    </section>
+
+    <section class="testimonials" id="temoignages">
+        <div class="testimonials-pattern"></div>
+        <div class="section-title" data-aos="fade-up">
+            <h2>Témoignages</h2>
+            <p>Ce que nos patients disent de nous</p>
+        </div>
+        <div class="swiper testimonials-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            "Une équipe professionnelle et attentionnée. Je recommande vivement ce cabinet pour la qualité des soins et l'accueil chaleureux."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-image">ML</div>
+                            <div class="author-info">
+                                <h4>Marie L.</h4>
+                                <span>Patient depuis 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            "Excellent service et résultats remarquables. L'équipe est très professionnelle et à l'écoute. Je me sens en confiance à chaque visite."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-image">PD</div>
+                            <div class="author-info">
+                                <h4>Pierre D.</h4>
+                                <span>Patient depuis 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-content">
+                            "Un cabinet moderne avec une équipe exceptionnelle. Les soins sont effectués avec précision et le suivi est impeccable. Je suis ravie de mon expérience."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-image">SM</div>
+                            <div class="author-info">
+                                <h4>Sophie M.</h4>
+                                <span>Patient depuis 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h2>Informations & Localisation</h2>
+                <div class="contact-info-details">
+                    <div class="contact-info-card">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-info-card-content">
+                            <h3>Téléphone</h3>
+                            <p>+33 1 23 45 67 89</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info-card-content">
+                            <h3>Email</h3>
+                            <p>contact@cabinet-dentaire.fr</p>
+                        </div>
+                    </div>
+                     <div class="contact-info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-info-card-content">
+                            <h3>Adresse</h3>
+                            <p>123 Rue de la Santé, 75001 Paris</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sfr!4v1647884581234!5m2!1sen!2sfr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="contact-form" data-aos="fade-left">
+                <h2>Prendre Rendez-vous</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Votre email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" placeholder="Votre numéro" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date souhaitée</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time">Horaire préféré</label>
+                            <select id="time" required>
+                                <option value="">Sélectionnez un horaire</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Type de consultation</label>
+                            <select id="service" required>
+                                <option value="">Sélectionnez un service</option>
+                                <option value="consultation">Consultation générale</option>
+                                <option value="detartrage">Détartrage</option>
+                                <option value="carie">Soin carie</option>
+                                <option value="prothese">Prothèse dentaire</option>
+                                <option value="implant">Implant dentaire</option>
+                                <option value="orthodontie">Orthodontie</option>
+                                <option value="urgence">Urgence dentaire</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (optionnel)</label>
+                        <textarea id="message" placeholder="Précisez vos besoins ou questions" rows="4"></textarea>
+                        <p class="form-note">Vous pouvez nous indiquer vos préférences ou contraintes particulières</p>
+                    </div>
+                    <button type="submit" class="cta-button">Demander un rendez-vous</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>Cabinet Dentaire Excellence</h3>
+                    <p>Votre sourire est notre priorité. Nous nous engageons à vous offrir des soins dentaires de qualité dans un environnement confortable et moderne.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#about">À Propos</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#horaires">Horaires</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-services">
+                    <h4>Nos Services</h4>
+                    <ul>
+                        <li><a href="#services">Sourire Hollywoodien</a></li>
+                        <li><a href="#services">Soins Dentaires</a></li>
+                        <li><a href="#services">Esthétique Dentaire</a></li>
+                        <li><a href="#services">Blanchiment Dentaire</a></li>
+                        <li><a href="#services">Facettes Dentaires</a></li>
+                        <li><a href="#services">Implants Dentaires</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contactez-nous</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Rue de la Santé, 75001 Paris</li>
+                        <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-envelope"></i> contact@cabinet-dentaire.fr</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Cabinet Dentaire Excellence. Tous droits réservés.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Politique de confidentialité</a>
+                        <a href="#">Mentions légales</a>
+                        <a href="#">Conditions d'utilisation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/33123456789" target="_blank" aria-label="Contactez-nous sur WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <span class="whatsapp-text">Contactez-nous</span>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <a href="#" aria-label="Retour en haut de la page">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Active link functionality
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        function highlightNavLink() {
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', highlightNavLink);
+
+        // Add click event listener for smooth scroll
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Scroll to Top functionality
+        const scrollToTop = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTop.classList.add('show');
+            } else {
+                scrollToTop.classList.remove('show');
+            }
+        });
+
+        scrollToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message. Nous vous contacterons bientôt.');
+            this.reset();
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Calendar functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendar = {
+                currentDate: new Date(),
+                selectedDate: null,
+                timeSlots: {
+                    '09:00': true,
+                    '10:00': true,
+                    '11:00': true,
+                    '14:00': true,
+                    '15:00': true,
+                    '16:00': true,
+                    '17:00': true
+                }
+            };
+
+            function updateCalendar() {
+                const year = calendar.currentDate.getFullYear();
+                const month = calendar.currentDate.getMonth();
+                
+                // Update month display
+                const monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+                document.getElementById('currentMonth').textContent = `${monthNames[month]} ${year}`;
+
+                // Generate calendar days
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                const startingDay = firstDay.getDay();
+
+                const calendarDays = document.getElementById('calendarDays');
+                calendarDays.innerHTML = '';
+
+                // Add empty cells for days before the first day of the month
+                for (let i = 0; i < startingDay; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.className = 'calendar-day disabled';
+                    calendarDays.appendChild(emptyDay);
+                }
+
+                // Get current date for comparison
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                // Add days of the month
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const currentDay = new Date(year, month, day);
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = day;
+
+                    // Check if the day is in the past or is a weekend
+                    if (currentDay < today || currentDay.getDay() === 0 || currentDay.getDay() === 6) {
+                        dayElement.classList.add('disabled');
+                    } else {
+                        dayElement.addEventListener('click', () => selectDate(currentDay));
+                    }
+
+                    // Highlight current day
+                    if (currentDay.getTime() === today.getTime()) {
+                        dayElement.classList.add('current-day');
+                    }
+
+                    calendarDays.appendChild(dayElement);
+                }
+            }
+
+            function selectDate(date) {
+                calendar.selectedDate = date;
+                const formattedDate = date.toLocaleDateString('fr-FR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                document.getElementById('selectedDate').textContent = formattedDate;
+
+                // Update selected day in calendar
+                document.querySelectorAll('.calendar-day').forEach(day => {
+                    day.classList.remove('selected');
+                });
+                event.target.classList.add('selected');
+
+                // Update time slots
+                updateTimeSlots();
+            }
+
+            function updateTimeSlots() {
+                const slotsGrid = document.querySelector('.slots-grid');
+                slotsGrid.innerHTML = '';
+
+                Object.entries(calendar.timeSlots).forEach(([time, available]) => {
+                    const slot = document.createElement('div');
+                    slot.className = `time-slot ${available ? 'available' : 'unavailable'}`;
+                    slot.textContent = time;
+                    if (available) {
+                        slot.addEventListener('click', () => selectTimeSlot(time));
+                    }
+                    slotsGrid.appendChild(slot);
+                });
+            }
+
+            function selectTimeSlot(time) {
+                alert(`Rendez-vous sélectionné pour le ${calendar.selectedDate.toLocaleDateString('fr-FR')} à ${time}`);
+            }
+
+            // Initialize calendar
+            updateCalendar();
+
+            // Add event listeners for navigation
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                calendar.currentDate.setMonth(calendar.currentDate.getMonth() - 1);
+                updateCalendar();
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                calendar.currentDate.setMonth(calendar.currentDate.getMonth() + 1);
+                updateCalendar();
+            });
+        });
+
+        // Initialize Hero Swiper
+        const heroSwiper = new Swiper('.hero-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Mobile menu functionality
+        const burgerMenu = document.querySelector('.burger-menu');
+        const mobileNavLinks = document.querySelector('.nav-links');
+        const menuOverlay = document.createElement('div');
+        menuOverlay.className = 'menu-overlay';
+        document.body.appendChild(menuOverlay);
+
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            mobileNavLinks.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileNavLinks.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking overlay
+        menuOverlay.addEventListener('click', () => {
+            burgerMenu.classList.remove('active');
+            mobileNavLinks.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                mobileNavLinks.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>
+
